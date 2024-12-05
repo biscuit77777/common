@@ -1,8 +1,7 @@
 package com.biscuit.common.utils;
 
 /**
- * @author mzh
- * @createTime 2024/12/5 15:26
+ * @author biscuit
  */
 public abstract class ConvertUtil {
 }
