@@ -1,4 +1,4 @@
-package com.biscuit.common.utils;
+package com.biscuit.common.util;
 
 /**
  * @author biscuit
