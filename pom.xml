@@ -6,7 +6,7 @@
 
     <groupId>io.github.biscuit77777</groupId>
     <artifactId>common</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <name>biscuit-common</name>
     <description>通用的依赖包</description>
@@ -14,7 +14,11 @@
 
     <properties>
         <lombok.version>1.18.28</lombok.version>
+        <slf4j.version>1.7.36</slf4j.version>
+        <logback.version>1.4.12</logback.version>
         <mybatis.version>3.5.3.1</mybatis.version>
+        <pinyin.version>2.5.1</pinyin.version>
+        <gson.version>2.9.1</gson.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,6 +29,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -40,6 +56,18 @@
                     <artifactId>mysql-connector-java</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>${pinyin.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
