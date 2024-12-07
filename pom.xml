@@ -13,10 +13,35 @@
     <url>https://github.com/biscuit77777/common</url>
 
     <properties>
+        <lombok.version>1.18.28</lombok.version>
+        <mybatis.version>3.5.3.1</mybatis.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatis.version}</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+            <exclusions>
+                <!-- 排除不需要的模块，例如排除数据库驱动等（如果不需要） -->
+                <exclusion>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

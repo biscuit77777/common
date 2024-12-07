@@ -1,5 +1,11 @@
 package com.biscuit.common.base;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,71 +14,38 @@ import java.time.LocalDateTime;
  * 通用实体类公共字段
  * @author biscuit
  */
+@Getter
+@Setter
 public abstract class BaseEntity implements Serializable {
 
     /**
      * id
      */
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
      * 是否删除，0未删除，1已删除
      */
+    @TableField(value = "is_deleted")
     private Integer isDeleted;
 
     /**
      * 创建时间
      */
+    @TableField(value = "create_time")
     private LocalDateTime createTime;
 
     /**
      * 修改时间
      */
+    @TableField(value = "modified_time")
     private LocalDateTime modifiedTime;
 
     /**
      * 删除时间
      */
+    @TableField(value = "deleted_time")
     private LocalDateTime deletedTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public LocalDateTime getModifiedTime() {
-        return modifiedTime;
-    }
-
-    public void setModifiedTime(LocalDateTime modifiedTime) {
-        this.modifiedTime = modifiedTime;
-    }
-
-    public LocalDateTime getDeletedTime() {
-        return deletedTime;
-    }
-
-    public void setDeletedTime(LocalDateTime deletedTime) {
-        this.deletedTime = deletedTime;
-    }
 
 }

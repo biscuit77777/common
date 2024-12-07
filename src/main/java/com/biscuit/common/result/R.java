@@ -1,11 +1,15 @@
 package com.biscuit.common.result;
 
 import com.biscuit.common.base.BaseAMO;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 通用响应
  * @author biscuit
  */
+@Getter
+@Setter
 public class R<T extends BaseAMO> extends BaseAMO {
 
     /**

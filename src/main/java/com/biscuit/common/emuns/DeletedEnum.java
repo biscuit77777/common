@@ -1,8 +1,11 @@
 package com.biscuit.common.emuns;
 
+import lombok.Getter;
+
 /**
  * @author biscuit
  */
+@Getter
 public enum DeletedEnum {
 
     /**
@@ -15,17 +18,9 @@ public enum DeletedEnum {
      */
     FALSE(0);
 
-    private Integer value;
+    private final int value;
 
-    DeletedEnum(Integer value) {
-        this.value = value;
-    }
-
-    public Integer getValue() {
-        return value;
-    }
-
-    public void setValue(Integer value) {
+    DeletedEnum(int value) {
         this.value = value;
     }
 
