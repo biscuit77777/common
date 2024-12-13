@@ -13,6 +13,7 @@
     <url>https://github.com/biscuit77777/common</url>
 
     <properties>
+        <sevlet.version>2.5</sevlet.version>
         <lombok.version>1.18.28</lombok.version>
         <slf4j.version>1.7.36</slf4j.version>
         <logback.version>1.4.12</logback.version>
@@ -67,6 +68,12 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${sevlet.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
