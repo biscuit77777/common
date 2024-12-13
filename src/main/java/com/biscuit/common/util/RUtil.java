@@ -1,7 +1,7 @@
 package com.biscuit.common.util;
 
 import com.biscuit.common.base.BaseAMO;
-import com.biscuit.common.emuns.ResultEnum;
+import com.biscuit.common.enums.ResultEnum;
 import com.biscuit.common.result.R;
 
 /**

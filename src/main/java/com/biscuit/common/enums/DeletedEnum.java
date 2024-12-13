@@ -1,4 +1,4 @@
-package com.biscuit.common.emuns;
+package com.biscuit.common.enums;
 
 import lombok.Getter;
 

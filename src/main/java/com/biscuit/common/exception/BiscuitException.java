@@ -1,6 +1,6 @@
 package com.biscuit.common.exception;
 
-import com.biscuit.common.emuns.ResultEnum;
+import com.biscuit.common.enums.ResultEnum;
 import lombok.Getter;
 import lombok.Setter;
 

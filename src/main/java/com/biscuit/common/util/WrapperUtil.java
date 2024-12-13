@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.biscuit.common.base.BaseEntity;
-import com.biscuit.common.emuns.DeletedEnum;
+import com.biscuit.common.enums.DeletedEnum;
 
 /**
  * @author biscuit0
