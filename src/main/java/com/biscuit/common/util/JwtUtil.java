@@ -96,7 +96,7 @@ public abstract class JwtUtil {
     /**
      * 获取 token 中的 特别数据 Map
      * @param token token
-     * @return Map<String, Object></>
+     * @return Map
      */
     public static Map<String, Object> getMap(String token) {
         return getClaims(token).get(CLAIMS_KEY).asMap();

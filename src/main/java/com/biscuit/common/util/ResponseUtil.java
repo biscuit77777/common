@@ -12,9 +12,6 @@ import java.io.IOException;
  */
 public abstract class ResponseUtil {
 
-    /**
-     * 向 Response 中写入通用响应信息
-     */
     public static void responseWrite(HttpServletResponse response, R<BaseAMO> result) throws IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
