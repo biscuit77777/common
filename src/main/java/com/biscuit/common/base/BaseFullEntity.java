@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -17,7 +16,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public abstract class BaseEntity implements Serializable {
+public abstract class BaseFullEntity implements Serializable {
 
     /**
      * id
@@ -32,10 +31,22 @@ public abstract class BaseEntity implements Serializable {
     private Integer isDeleted;
 
     /**
+     * 创建人
+     */
+    @TableField(value = "create_by", fill = FieldFill.INSERT)
+    private Long createBy;
+
+    /**
      * 创建时间
      */
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     private LocalDateTime createTime;
+
+    /**
+     * 修改人
+     */
+    @TableField(value = "modified_by", fill = FieldFill.INSERT_UPDATE)
+    private Long modifiedBy;
 
     /**
      * 修改时间
