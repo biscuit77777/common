@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.security.MessageDigest;
 
 /**
+ * MD5加密工具类
  * @author biscuit
  */
 @Slf4j

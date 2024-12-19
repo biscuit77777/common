@@ -5,6 +5,7 @@ import com.biscuit.common.enums.ResultEnum;
 import com.biscuit.common.result.R;
 
 /**
+ * 返回值工具类
  * @author biscuit
  */
 public abstract class RUtil {

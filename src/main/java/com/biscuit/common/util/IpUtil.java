@@ -3,6 +3,7 @@ package com.biscuit.common.util;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * IP 工具类
  * @author biscuit
  */
 public abstract class IpUtil {

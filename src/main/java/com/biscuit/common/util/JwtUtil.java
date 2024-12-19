@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
+ * Jwt 工具类
  * @author biscuit
  */
 public abstract class JwtUtil {

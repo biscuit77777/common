@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * 忽略登录校验注解
  * @author biscuit
  */
 @Retention(RetentionPolicy.RUNTIME)

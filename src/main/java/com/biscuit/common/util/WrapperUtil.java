@@ -7,6 +7,7 @@ import com.biscuit.common.base.BaseEntity;
 import com.biscuit.common.enums.DeletedEnum;
 
 /**
+ * Wrapper 条件工具类
  * @author biscuit0
  */
 public abstract class WrapperUtil<T extends BaseEntity> {
