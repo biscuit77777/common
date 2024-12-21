@@ -33,6 +33,13 @@ public abstract class NumberUtil {
     /**
      * 判断数值是否标准，不为空并且大于0
      */
+    public static boolean isMeasure(Long number) {
+        return Objects.nonNull(number) && number > 0;
+    }
+
+    /**
+     * 判断数值是否标准，不为空并且大于0
+     */
     public static boolean isMeasure(BigDecimal number) {
         return Objects.nonNull(number) && number.compareTo(BigDecimal.ZERO) > 0;
     }

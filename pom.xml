@@ -6,7 +6,7 @@
 
     <groupId>io.github.biscuit77777</groupId>
     <artifactId>common</artifactId>
-    <version>0.0.6</version>
+    <version>0.0.7</version>
 
     <name>biscuit-common</name>
     <description>通用的依赖包</description>
