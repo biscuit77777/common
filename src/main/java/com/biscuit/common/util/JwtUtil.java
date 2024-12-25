@@ -95,6 +95,17 @@ public abstract class JwtUtil {
     }
 
     /**
+     * 获取 token 中的特殊数据
+     * @param key key
+     * @param token token
+     * @param clazz 数据类型
+     * @return 特定数据
+     */
+    public static <T> T get(String key, String token, Class<T> clazz) {
+        return getClaims(token).get(key).as(clazz);
+    }
+
+    /**
      * 获取 token 中的 特别数据 Map
      * @param token token
      * @return Map
