@@ -19,7 +19,7 @@ public class RPage<T extends BaseAMO> extends RList<T> {
     /**
      * 当前页码
      */
-    private Long page;
+    private Long current;
 
     /**
      * 每页条数
@@ -37,7 +37,7 @@ public class RPage<T extends BaseAMO> extends RList<T> {
     private Long total;
 
     public <V> void assign(Page<V> page) {
-        this.page = page.getCurrent();
+        this.current = page.getCurrent();
         this.size = page.getSize();
         this.pages = page.getPages();
         this.total = page.getTotal();
