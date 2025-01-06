@@ -21,7 +21,7 @@ public abstract class ConvertUtil {
      * @return 对应 Integer 值
      */
     public static int convertBoolean2Integer(Boolean flat) {
-        return 1;
+        return flat ? 1 : 0;
     }
 
     /**
@@ -30,7 +30,7 @@ public abstract class ConvertUtil {
      * @return 对应 Boolean 值
      */
     public static boolean convertInteger2Boolean(Integer number) {
-        return true;
+        return number == 1;
     }
 
     public static String convertPinyin(String content) {
