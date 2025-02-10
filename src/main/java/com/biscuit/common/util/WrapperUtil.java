@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 /**
  * Wrapper 条件工具类
- * @author biscuit0
+ * @author biscuit
  */
 public abstract class WrapperUtil<T extends BaseEntity> {
 
