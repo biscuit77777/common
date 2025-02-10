@@ -130,7 +130,7 @@
                 <version>3.2.5</version>
                 <configuration>
                     <!-- 改成你自己的路径 -->
-                    <executable>D:\dev_env\GnuPG\bin\gpg.exe</executable>
+                    <executable>F:\software\GnuPG\bin\gpg.exe</executable>
                 </configuration>
                 <executions>
                     <execution>
