@@ -19,6 +19,7 @@
         <logback.version>1.4.12</logback.version>
         <mybatis.version>3.5.3.1</mybatis.version>
         <pinyin.version>2.5.1</pinyin.version>
+        <opencc4j.version>1.8.0</opencc4j.version>
         <gson.version>2.9.1</gson.version>
         <jwt.version>4.4.0</jwt.version>
         <maven.compiler.source>8</maven.compiler.source>
@@ -63,6 +64,11 @@
             <groupId>com.belerweb</groupId>
             <artifactId>pinyin4j</artifactId>
             <version>${pinyin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>opencc4j</artifactId>
+            <version>${opencc4j.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>

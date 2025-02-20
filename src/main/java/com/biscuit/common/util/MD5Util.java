@@ -13,7 +13,7 @@ public abstract class MD5Util {
 
     private static MessageDigest digest;
 
-    private final static String SALT = "@,as741-##@~!";
+    private final static String SALT = "";
 
     static {
         try {
