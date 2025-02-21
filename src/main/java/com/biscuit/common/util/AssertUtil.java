@@ -5,6 +5,7 @@ import com.biscuit.common.enums.ResultEnum;
 import com.biscuit.common.exception.BiscuitException;
 
 import java.util.Collection;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -49,6 +50,20 @@ public abstract class AssertUtil {
      * 快捷断言，集合非空
      */
     public static void isNotEmpty(Collection<?> collection, String message) {
+        assertion(CollectionUtils.isNotEmpty(collection), message);
+    }
+
+    /**
+     * 快捷断言，集合为空
+     */
+    public static void isEmpty(Map<?, ?> collection, String message) {
+        assertion(CollectionUtils.isEmpty(collection), message);
+    }
+
+    /**
+     * 快捷断言，集合非空
+     */
+    public static void isNotEmpty(Map<?, ?> collection, String message) {
         assertion(CollectionUtils.isNotEmpty(collection), message);
     }
 

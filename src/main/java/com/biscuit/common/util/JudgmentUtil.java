@@ -1,7 +1,10 @@
 package com.biscuit.common.util;
 
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+
 import java.math.BigDecimal;
 import java.util.Collection;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -71,6 +74,26 @@ public abstract class JudgmentUtil {
      * @return true 非空 | false 空
      */
     public static boolean isNotEmpty(Collection<?> collection) {
+        return !isEmpty(collection);
+    }
+
+    /**
+     * 是否为空集合
+     *
+     * @param collection 集合
+     * @return true 空 | false 非空
+     */
+    public static boolean isEmpty(Map<?, ?> collection) {
+        return collection == null || !collection.isEmpty();
+    }
+
+    /**
+     * 是否为非空集合
+     *
+     * @param collection 集合
+     * @return true 非空 | false 空
+     */
+    public static boolean isNotEmpty(Map<?, ?> collection) {
         return !isEmpty(collection);
     }
 
