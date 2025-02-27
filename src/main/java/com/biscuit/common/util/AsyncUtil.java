@@ -2,7 +2,6 @@ package com.biscuit.common.util;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @author biscuit
  */
 @Slf4j
-public abstract class ThreadUtil {
+public abstract class AsyncUtil {
 
     private static final ThreadPoolExecutor executor;
 
@@ -24,7 +23,7 @@ public abstract class ThreadUtil {
                 new LinkedBlockingQueue<>(10), // 阻塞队列
                 new ThreadPoolExecutor.CallerRunsPolicy() // 拒绝策略
         );
-        log.info("ThreadUtil - ThreadPoolExecutor 线程池创建成功");
+        log.info("AsyncUtil - ThreadPoolExecutor 线程池创建成功");
     }
 
     /**
@@ -32,8 +31,17 @@ public abstract class ThreadUtil {
      *
      * @return 线程池
      */
-    public static ThreadPoolExecutor single() {
+    public static ThreadPoolExecutor executor() {
         return executor;
+    }
+
+    /**
+     * 异步执行任务
+     *
+     * @param runnable 任务
+     */
+    public static void execute(Runnable runnable) {
+        executor.execute(runnable);
     }
 
 }
