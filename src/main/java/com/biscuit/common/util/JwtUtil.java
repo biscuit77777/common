@@ -5,6 +5,8 @@ import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.biscuit.common.base.BaseAMO;
+import com.biscuit.common.enums.ResultEnum;
+import com.biscuit.common.exception.LoginException;
 import com.biscuit.common.factory.GsonFactory;
 import com.biscuit.common.result.R;
 
@@ -14,6 +16,7 @@ import java.util.*;
 
 /**
  * Jwt 工具类
+ *
  * @author biscuit
  */
 public abstract class JwtUtil {
@@ -25,6 +28,7 @@ public abstract class JwtUtil {
 
     /**
      * 获取 token 并设置 token 过期时间为5天，在 token 中存储 userId
+     *
      * @param userId userId
      * @return token
      */
@@ -34,8 +38,9 @@ public abstract class JwtUtil {
 
     /**
      * 获取 token 并设置 token 过期时间，在 token 中存储 userId
-     * @param key key
-     * @param data 存储数据
+     *
+     * @param key    key
+     * @param data   存储数据
      * @param second 过期时间（秒）
      * @return token
      */
@@ -87,6 +92,7 @@ public abstract class JwtUtil {
 
     /**
      * 获取 token 中的 userId
+     *
      * @param token token
      * @return userId
      */
@@ -96,7 +102,8 @@ public abstract class JwtUtil {
 
     /**
      * 获取 token 中的特殊数据
-     * @param key key
+     *
+     * @param key   key
      * @param token token
      * @param clazz 数据类型
      * @return 特定数据
@@ -107,6 +114,7 @@ public abstract class JwtUtil {
 
     /**
      * 获取 token 中的 特别数据 Map
+     *
      * @param token token
      * @return Map
      */
@@ -116,6 +124,7 @@ public abstract class JwtUtil {
 
     /**
      * 校验是否过期
+     *
      * @param token token
      * @return true 过期，false 未过期
      */
@@ -131,7 +140,7 @@ public abstract class JwtUtil {
         try {
             return JWT.require(Algorithm.HMAC256(SALT)).build().verify(token).getClaims();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new LoginException(ResultEnum.TOKEN_TAMPER.getCode(), e.getMessage());
         }
     }
 
