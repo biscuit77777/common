@@ -47,7 +47,7 @@ public abstract class HttpUtil {
             }
             return null;
         } catch (Exception e) {
-            throw new BiscuitException(ResultEnum.FAIL.getCode(), "HttpUtil 发送 POST 请求失败");
+            throw new BiscuitException(ResultEnum.UNKNOWN_ERROR.getCode(), "HttpUtil 发送 POST 请求失败");
         }
     }
 
@@ -68,7 +68,7 @@ public abstract class HttpUtil {
             }
             return null;
         } catch (Exception e) {
-            throw new BiscuitException(ResultEnum.FAIL.getCode(), "HttpUtil 发送 GET 请求失败");
+            throw new BiscuitException(ResultEnum.UNKNOWN_ERROR.getCode(), "HttpUtil 发送 GET 请求失败");
         }
     }
 
@@ -98,7 +98,7 @@ public abstract class HttpUtil {
             }
             return get(queryString.toString());
         } catch (Exception e) {
-            throw new BiscuitException(ResultEnum.FAIL.getCode(), "HttpUtil 发送 GET 请求失败");
+            throw new BiscuitException(ResultEnum.UNKNOWN_ERROR.getCode(), "HttpUtil 发送 GET 请求失败");
         }
     }
 

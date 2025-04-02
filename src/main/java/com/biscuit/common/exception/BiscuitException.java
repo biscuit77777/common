@@ -16,7 +16,7 @@ public class BiscuitException extends RuntimeException {
     private String desc;
 
     public BiscuitException() {
-        this(ResultEnum.FAIL);
+        this(ResultEnum.UNKNOWN_ERROR);
     }
 
     public BiscuitException(ResultEnum result) {

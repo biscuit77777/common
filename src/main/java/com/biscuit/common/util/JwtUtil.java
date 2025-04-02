@@ -140,7 +140,7 @@ public abstract class JwtUtil {
         try {
             return JWT.require(Algorithm.HMAC256(SALT)).build().verify(token).getClaims();
         } catch (Exception e) {
-            throw new LoginException(ResultEnum.TOKEN_TAMPER.getCode(), e.getMessage());
+            throw new LoginException(ResultEnum.TOKEN_TAMPER_ERROR.getCode(), e.getMessage());
         }
     }
 

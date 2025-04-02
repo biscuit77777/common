@@ -1,7 +1,6 @@
 package com.biscuit.common.util;
 
 import com.biscuit.common.dtos.RSAPairDTO;
-import sun.security.util.AuthResources_de;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -27,7 +26,8 @@ public abstract class RSAKeyPairUtil {
     /**
      * 生成指定长度的 RSA 非对称公私钥
      *
-     * @param keySize 长度
+     * @param keySize 密钥长度，512 | 1024 | 2048 | 4096 ~ 16384
+     *                JDK8 仅支持到 2048 长度
      */
     public static RSAPairDTO generator(int keySize) {
         try {
@@ -126,21 +126,6 @@ public abstract class RSAKeyPairUtil {
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static void main(String[] args) {
-        RSAPairDTO dto = generator();
-        System.out.println("公钥 => " + dto.getPublicKey());
-        System.out.println("私钥 => " + dto.getPrivateKey());
-
-        System.out.println("\n");
-
-        String text = "Hello Biscuit, Please refuel!";
-        String body = encrypt(dto.getPublicKey(), text);
-
-        System.out.println("未加密内容 =>" + text);
-        System.out.println("使用公钥加密后的内容 => " + body);
-        System.out.println("使用私钥解密后的内容 => " + decrypt(dto.getPrivateKey(), body));
     }
 
 }

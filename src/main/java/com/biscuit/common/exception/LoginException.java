@@ -16,7 +16,7 @@ public class LoginException extends RuntimeException {
     private String desc;
 
     public LoginException() {
-        this(ResultEnum.NOT_LOGIN);
+        this(ResultEnum.NOT_LOGIN_ERROR);
     }
 
     public LoginException(ResultEnum result) {

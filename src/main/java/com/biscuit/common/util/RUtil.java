@@ -6,6 +6,7 @@ import com.biscuit.common.result.R;
 
 /**
  * 返回值工具类
+ *
  * @author biscuit
  */
 public abstract class RUtil {
@@ -19,7 +20,7 @@ public abstract class RUtil {
     }
 
     public static <T extends BaseAMO> R<T> fail() {
-        return fail(ResultEnum.FAIL);
+        return fail(ResultEnum.UNKNOWN_ERROR);
     }
 
     public static <T extends BaseAMO> R<T> fail(ResultEnum resultEnum) {

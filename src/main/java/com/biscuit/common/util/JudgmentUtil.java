@@ -1,7 +1,5 @@
 package com.biscuit.common.util;
 
-import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
-
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Map;
@@ -13,6 +11,26 @@ import java.util.Objects;
  * @author biscuit
  */
 public abstract class JudgmentUtil {
+
+    /**
+     * 判断对象是否为空
+     *
+     * @param obj 对象
+     * @return true 空 | false 非空
+     */
+    public static boolean isNull(Object obj) {
+        return obj == null;
+    }
+
+    /**
+     * 判断对象是否不为空
+     *
+     * @param obj 对象
+     * @return true 非空 | false 空
+     */
+    public static boolean isNotNull(Object obj) {
+        return !isNull(obj);
+    }
 
     /**
      * 字符串是否为空
