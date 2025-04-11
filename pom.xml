@@ -22,6 +22,7 @@
         <pinyin.version>2.5.1</pinyin.version>
         <opencc4j.version>1.8.0</opencc4j.version>
         <gson.version>2.9.1</gson.version>
+        <jackson.version>2.13.5</jackson.version>
         <jwt.version>4.4.0</jwt.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -80,6 +81,12 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
