@@ -13,7 +13,7 @@ import java.time.format.DateTimeParseException;
 /**
  * SpringMVC，接收 LocalDateTime 类型参数时的处理
  *
- * @author zihao.ma
+ * @author biscuit
  */
 public class MvcLocalDateTimeDeserializer extends JsonDeserializer<LocalDateTime> {
 

@@ -11,7 +11,7 @@ import java.security.SecureRandom;
 import java.util.Base64;
 
 /**
- * @author zihao.ma
+ * @author biscuit
  */
 public abstract class AESKeyUtil {
 

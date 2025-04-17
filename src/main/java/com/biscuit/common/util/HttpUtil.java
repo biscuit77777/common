@@ -8,14 +8,20 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 
+import javax.net.ssl.SSLContext;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+
+import static org.apache.http.conn.ssl.NoopHostnameVerifier.INSTANCE;
 
 /**
  * @author biscuit
@@ -59,8 +65,17 @@ public abstract class HttpUtil {
      */
     public static String get(String url) {
         try {
+            SSLContext sslContext = new SSLContextBuilder()
+                    .loadTrustMaterial(null, (chain, authType) -> true) // 信任所有证书
+                    .build();
+
+            SSLConnectionSocketFactory sslSocketFactory =
+                    new SSLConnectionSocketFactory(sslContext, INSTANCE);
+            CloseableHttpClient client = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build();
+
             HttpGet request = new HttpGet(url);
-            CloseableHttpResponse response = httpClient.execute(request);
+            // CloseableHttpResponse response = httpClient.execute(request);
+            CloseableHttpResponse response = client.execute(request);
 
             HttpEntity entity = response.getEntity();
             if (entity != null) {

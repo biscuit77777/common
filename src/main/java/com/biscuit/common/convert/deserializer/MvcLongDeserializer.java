@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * SpringMVC，接收 Long 类型参数时的处理
  *
- * @author zihao.ma
+ * @author biscuit
  */
 public class MvcLongDeserializer extends JsonDeserializer<Long> {
 

@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * SpringMVC，响应返回 LocalDate 数据类型时的处理
  *
- * @author zihao.ma
+ * @author biscuit
  */
 public class MvcLocalDateSerializer extends JsonSerializer<LocalDate> {
 
