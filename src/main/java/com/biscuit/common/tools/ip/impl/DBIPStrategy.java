@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 import java.util.Map;
 
 /**
- * @author zihao.ma
+ * @author biscuit
  */
 public class DBIPStrategy implements IPInfoAbstract {
 

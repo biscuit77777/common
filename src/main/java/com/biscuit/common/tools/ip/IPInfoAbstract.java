@@ -3,7 +3,7 @@ package com.biscuit.common.tools.ip;
 import com.biscuit.common.dtos.IPInfoDTO;
 
 /**
- * @author zihao.ma
+ * @author biscuit
  */
 public interface IPInfoAbstract {
 

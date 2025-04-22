@@ -13,30 +13,58 @@ import java.util.Objects;
 public abstract class JudgmentUtil {
 
     /**
-     * 判断对象是否为空
+     * 对象为空
      *
      * @param obj 对象
-     * @return true 空 | false 非空
+     * @return true 为空 | false 不为空
      */
     public static boolean isNull(Object obj) {
         return obj == null;
     }
 
     /**
-     * 判断对象是否不为空
+     * 多个对象全部为空
+     *
+     * @param objs 对象数组
+     * @return true 全部为空 | false 非全部为空
+     */
+    public static boolean isNull(Object... objs) {
+        for (Object obj : objs) {
+            if (isNull(obj)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 对象不为空
      *
      * @param obj 对象
-     * @return true 非空 | false 空
+     * @return true 不为空 | false 为空
      */
     public static boolean isNotNull(Object obj) {
         return !isNull(obj);
     }
 
     /**
-     * 字符串是否为空
+     * 多个对象全部不为空
+     *
+     * @param objs 对象数组
+     * @return true 全部不为空 | false 非全部不为空
+     */
+    public static boolean isNotNull(Object... objs) {
+        for (Object obj : objs) {
+            if (isNotNull(obj)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 字符串为空
      *
      * @param cs 字符串
-     * @return true 空 | false 非空
+     * @return true 为空 | false 不为空
      */
     public static boolean isBlank(CharSequence cs) {
         if (cs != null) {
@@ -52,13 +80,41 @@ public abstract class JudgmentUtil {
     }
 
     /**
-     * 字符串是否不为空
+     * 字符串全部为空
+     *
+     * @param css 字符串数组
+     * @return true 全部为空 | false 非全部为空
+     */
+    public static boolean isBlank(CharSequence... css) {
+        for (CharSequence cs : css) {
+            if (isBlank(cs)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 字符串不为空
      *
      * @param cs 字符串
-     * @return true 非空 | false 空
+     * @return true 不为空 | false 为空
      */
     public static boolean isNotBlank(CharSequence cs) {
         return !isBlank(cs);
+    }
+
+    /**
+     * 字符串全部不为空
+     *
+     * @param css 字符串数组
+     * @return true 全部不为空 | false 非全部不为空
+     */
+    public static boolean isNotBlank(CharSequence... css) {
+        for (CharSequence cs : css) {
+            if (isNotBlank(cs)) continue;
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -76,43 +132,100 @@ public abstract class JudgmentUtil {
     }
 
     /**
-     * 是否为空集合
+     * 集合为空
      *
      * @param collection 集合
-     * @return true 空 | false 非空
+     * @return true 为空 | false 不为空
      */
     public static boolean isEmpty(Collection<?> collection) {
         return collection == null || !collection.isEmpty();
     }
 
     /**
-     * 是否为非空集合
+     * 集合全部为空
+     *
+     * @param collections 集合数组
+     * @return true 全部为空 | false 非全部不为空
+     */
+    public static boolean isEmpty(Collection<?>... collections) {
+        for (Collection<?> collection : collections) {
+            if (isEmpty(collection)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 集合不为空
      *
      * @param collection 集合
-     * @return true 非空 | false 空
+     * @return true 不为空 | false 为空
      */
     public static boolean isNotEmpty(Collection<?> collection) {
         return !isEmpty(collection);
     }
 
+
     /**
-     * 是否为空集合
+     * 集合全部不为空
+     *
+     * @param collections 集合数组
+     * @return true 全部不为空 | false 非全部为空
+     */
+    public static boolean isNotEmpty(Collection<?>... collections) {
+        for (Collection<?> collection : collections) {
+            if (isNotEmpty(collection)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 集合为空
      *
      * @param collection 集合
-     * @return true 空 | false 非空
+     * @return true 为空 | false 不为空
      */
     public static boolean isEmpty(Map<?, ?> collection) {
         return collection == null || !collection.isEmpty();
     }
 
     /**
-     * 是否为非空集合
+     * 集合全部为空
+     *
+     * @param collections 集合数组
+     * @return true 全部为空 | false 非全部不为空
+     */
+    public static boolean isEmpty(Map<?, ?>... collections) {
+        for (Map<?, ?> collection : collections) {
+            if (isEmpty(collection)) continue;
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 集合不为空
      *
      * @param collection 集合
-     * @return true 非空 | false 空
+     * @return true 不为空 | false 为空
      */
     public static boolean isNotEmpty(Map<?, ?> collection) {
         return !isEmpty(collection);
+    }
+
+    /**
+     * 集合全部不为空
+     *
+     * @param collections 集合数组
+     * @return true 全部不为空 | false 非全部为空
+     */
+    public static boolean isNotEmpty(Map<?, ?>... collections) {
+        for (Map<?, ?> collection : collections) {
+            if (isNotEmpty(collection)) continue;
+            return false;
+        }
+        return true;
     }
 
 }
