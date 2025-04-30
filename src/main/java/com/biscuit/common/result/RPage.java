@@ -1,15 +1,16 @@
 package com.biscuit.common.result;
 
-import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.biscuit.common.base.BaseAMO;
-import com.biscuit.common.base.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 
 /**
  * 通用分页响应参数
+ *
  * @author biscuit
  */
 @Getter
@@ -36,11 +37,13 @@ public class RPage<T extends BaseAMO> extends RList<T> {
      */
     private Long total;
 
+    @SuppressWarnings("unchecked")
     public <V> void assign(Page<V> page) {
         this.current = page.getCurrent();
         this.size = page.getSize();
-        this.pages = page.getPages();
+        this.pages = page.getPages() == 0 ? 1 : page.getPages();
         this.total = page.getTotal();
+        super.setList((List<T>) page.getRecords());
     }
 
 }
