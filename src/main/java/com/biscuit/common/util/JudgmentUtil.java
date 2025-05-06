@@ -138,7 +138,7 @@ public abstract class JudgmentUtil {
      * @return true 为空 | false 不为空
      */
     public static boolean isEmpty(Collection<?> collection) {
-        return collection == null || !collection.isEmpty();
+        return collection == null || collection.isEmpty();
     }
 
     /**
